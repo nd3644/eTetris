@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 3ab207764a62335e69aea09ae18302d4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - blueMaterial: {instanceID: 0}
+  - tealMaterial: {instanceID: 0}
+  - greenMaterial: {instanceID: 0}
+  - purpleMaterial: {instanceID: 0}
+  - orangeMaterial: {instanceID: 0}
+  - yellowMaterial: {instanceID: 0}
+  - redMaterial: {instanceID: 0}
+  - myParticlePrefab: {fileID: 478501084284398620, guid: 9c5fc4bce0727293c8c92efd5d77ef7f,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
