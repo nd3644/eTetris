@@ -6,7 +6,6 @@ public class ControlBrickScript : MonoBehaviour
 {
 
     private Stack<PieceType>myPieceStack;
-    private BrickRenderer [] myUpcomingBricks;
 
     private const float TIMER_MAX_TICKS = 1;
     private float currentTicks = TIMER_MAX_TICKS;
@@ -38,7 +37,6 @@ public class ControlBrickScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myUpcomingBricks = new BrickRenderer[5];
         myPieceStack = new Stack<PieceType>();
         for(int i = 0;i < 5;i++) {
             myPieceStack.Push((PieceType)Random.Range(1,7));
@@ -52,8 +50,8 @@ public class ControlBrickScript : MonoBehaviour
                 myBricks[x,y] = GameObject.CreatePrimitive(PrimitiveType.Cube);
             }
         }
-
         RebuildShape();
+        RegenerateCubes();
 
 //        Tower.GetComponent<ControlBrickScript>().Tower.GetBrick(0,0);
     }
@@ -137,29 +135,17 @@ public class ControlBrickScript : MonoBehaviour
             iBrickLayout[2,1] = 1;
             activeMaterial = redMaterial;
             sActiveColor = "red";
-        }
-
-
-        // Below loads a brick for debug
-        for(int x = 0;x < 4;x++) {
-            for(int y = 0;y < 4;y++) {
-                iBrickLayout[x,y] = 0;
-            }
-        }
-
-        iBrickLayout[1,1] = 1;
-        iBrickLayout[2,1] = 1;
-        iBrickLayout[2,2] = 1;
-        iBrickLayout[1,2] = 1;
-        
+        }        
     }
 
+
+    // Enable/disable cube gameobjects based on contents of iBrickLayout
     void RegenerateCubes()
     {
         for(int x = 0;x < 4;x++) {
             for(int y = 0;y < 4;y++) {
                 if(iBrickLayout[x,y] == 0) {
-//                    myBricks[x,y].SetActive(false);
+                    myBricks[x,y].SetActive(false);
                 }
                 else {
                     myBricks[x,y].SetActive(true);
