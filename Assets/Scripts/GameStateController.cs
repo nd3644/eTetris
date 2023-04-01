@@ -10,6 +10,7 @@ public class GameStateController : MonoBehaviour
     public GameObject myGhostController;
     public TextMeshProUGUI myCountdownObj;
     public ControlBrickScript myControlBrick;
+    public Tower myTower;
 
     public GameObject myPauseScreen;
 
@@ -120,5 +121,7 @@ public class GameStateController : MonoBehaviour
     public void ReturnToMenu()
     {
         CurrentGameState = GameState.STATE_TRANSITION_TO_MENU;
+        myTower.ClearTower();
+        myControlBrick.ResetState();
     }
 }

@@ -11,7 +11,11 @@ public class MainMenu : MonoBehaviour
     public void PlayGame() {
 //        gameObject.SetActive(false);
         myGameStateController.CurrentGameState = GameStateController.GameState.STATE_TRANSITION_TO_PLAYING;
-        myGameStateController.fCountdown = 5;
+        myGameStateController.fCountdown = 2;
+    }
+
+    public void QuitGame() {
+        Application.Quit();
     }
 
     // Start is called before the first frame update
